@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        td{
+            color: #708090;
+            font-style: italic  ;
+        }
+        table
+        {
+            border-spacing:   0 15px;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin:auto;background-color: rgba(38, 106, 195, 0.863);border: 3px solid;width: 35%;">
+        <h3 style=" text-align:center; color: aliceblue;">Team Details</h3>
+     </div>
+     <br>
+
+
+     <div style="margin:auto;width: 35%; height: 500px;border: 3px solid;  background-color:#87CEEB;">
+    
+        <form action="./InsertTeamServlet" method="post">
+            <table  style="margin-left: auto; margin-right:auto;">
+               
+                <tr>
+                    <td >Team_id<span style="color: red;">*</span> </td>
+                    <td ><input type="number" name="Team_id" placeholder="Enter Team Id" /></td>
+                </tr>
+                <br>
+                 <tr>
+                    <td >Team_Name<span style="color: red;">*</span> </td>
+                    <td ><input type="text" name="Team_Name" placeholder="Enter Team name" /></td>
+                </tr>
+                <br>
+                <tr>
+                    <td >Coach_Name<span style="color: red;">*</span> </td>
+                    <td ><input type="text" name="Coach_Name" placeholder="Enter Coachname" /></td>
+                </tr>
+                <br>
+                <tr>
+                    <td>Owner_Name<span style="color: red;">*</span> </td>
+                    <td><input type="text" name="Owner_Name" style=" width: 78%;"placeholder="Enter Owner Name"/></td>
+                </tr>
+                <tr>
+                    <td >Captain_Name<span style="color: red;">*</span> </td>
+                    <td ><input type="text" name="Captain_Name" placeholder="Enter Captain Name" /></td>
+                </tr>
+                
+               
+                <tr>
+                </tr>
+                </table>
+                </div>
+                <div style="margin:auto;background-color: rgba(38, 106, 195, 0.863);border: 3px solid;width: 35%; height: 80px;margin-top: 20px; ">
+        <center><input type="submit" value="Add Team"></center>
+         </div>
+           </form>
+
+</body>
+</html>
