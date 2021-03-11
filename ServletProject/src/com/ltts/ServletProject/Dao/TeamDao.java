@@ -16,7 +16,7 @@ import com.ltts.ServletProject.model.Team;
 			List<Team> li=new ArrayList<Team>();
 			Connection mc=MyConnection.getConnection(); // TRanfers control to another 
 			Statement ps=mc.createStatement();
-			ResultSet rs=ps.executeQuery("select * from player");
+			ResultSet rs=ps.executeQuery("select * from Team");
 			//Player p=new Player();
 			while(rs.next()) {
 				li.add(new Team(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));

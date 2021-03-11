@@ -20,7 +20,7 @@ public class PlayerDao {
 		ResultSet rs=ps.executeQuery("select * from player");
 		//Player p=new Player();
 		while(rs.next()) {
-			li.add(new Player(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5)));
+			li.add(new Player(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(9),rs.getString(10),rs.getString(11)));
 			
 		}
 		return li;
@@ -36,6 +36,12 @@ public class PlayerDao {
 				p.setSkill(p1.getSkill());
 				p.setCountry(p1.getCountry());
 				p.setDOB(p1.getDOB());
+				p.setAge(p1.getAge());
+				p.setMatches(p1.getMatches());
+				p.setRuns(p1.getRuns());
+				p.setWickets(p1.getWickets());
+				p.setBatting_Style(p1.getBatting_Style());
+				p.setBowling_Style(p1.getBowling_Style());
 			}
 		}
 		
@@ -46,12 +52,18 @@ public class PlayerDao {
 	public boolean insertPlayer(Player p) throws Exception {
 		//fill your code
 		Connection mc=MyConnection.getConnection(); // TRanfers control to another 
-		PreparedStatement ps=mc.prepareStatement("insert into player values(?,?,?,?,?)");
+		PreparedStatement ps=mc.prepareStatement("insert into player values(?,?,?,?,?,?,?,?,?,?,?)");
 		ps.setInt(1, p.getPlayer_id());
 		ps.setString(2, p.getPlayer_Name());
 		ps.setString(3, p.getSkill());
 		ps.setString(4,p.getCountry());
 		ps.setDate(5, p.getDOB());
+		ps.setInt(6,p.getAge());
+		ps.setInt(7,p.getMatches());
+		ps.setInt(8,p.getRuns());
+		ps.setInt(9,p.getWickets());
+		ps.setString(10,p.getBatting_Style());
+		ps.setString(11,p.getBowling_Style());
 
 		return ps.execute();
 		//return false;

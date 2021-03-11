@@ -29,7 +29,14 @@ public class InsertPlayerServlet extends HttpServlet {
 		String country=request.getParameter("country");
 		String DOB=request.getParameter("DOB");
 		Date d=Date.valueOf(DOB);
-		Player p=new Player(Player_id,Player_Name,Skill,country,d);		
+		int Age=Integer.parseInt(request.getParameter("Age"));
+		int Matches=Integer.parseInt(request.getParameter("Matches"));
+		int Runs=Integer.parseInt(request.getParameter("Runs"));
+		int Wickets=Integer.parseInt(request.getParameter("Wickets"));
+		String Batting_Style=request.getParameter("Batting_Style");
+		String Bowling_Style=request.getParameter("Bowling_Style");
+		
+		Player p=new Player(Player_id,Player_Name,Skill,country,d,Age,Matches,Runs,Wickets,Batting_Style,Bowling_Style);		
 		System.out.println("Inside Servlet: "+p);
 		PlayerDao pd=new PlayerDao();	
 		

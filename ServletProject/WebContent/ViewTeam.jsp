@@ -15,23 +15,23 @@ List<Team> li=td.getAllTeam();
 %>
 <table>
 <tr>
-<th>Player Number</th>
-<th>Player Name</th>
-<th>Player Skill</th>
-<th>Country</th>
-<th>Player DOB</th>
+<th>Team Id</th>
+<th>Team Name</th>
+<th>Coach Name</th>
+<th>Owner Name</th>
+<th>Captain Name</th>
 <th></th>
 </tr>
 <%
-for(Team p:li){
+for(Team t:li){
 %>
 <tr>
-<td><%=p.getPlayer_id() %></td>
-<td><%=p.getPlayer_Name() %></td>
-<td><%=p.getSkill() %></td>
-<td><%=p.getCountry() %></td>
-<td><%=p.getDOB() %></td>
-<td><a href="editplayer.jsp?id=<%=p.getPlayer_id()%>">Update</a></td>
+<td><%=t.getTeam_id() %></td>
+<td><%=t.getTeam_Name() %></td>
+<td><%=t.getCoach_Name() %></td>
+<td><%=t.getOwner_Name() %></td>
+<td><%=t.getCaptain_Name() %></td>
+<td><a href="editTeam.jsp?id=<%=t.getTeam_id()%>">Update</a></td>
 </tr>
 <%} %>
 </table>
