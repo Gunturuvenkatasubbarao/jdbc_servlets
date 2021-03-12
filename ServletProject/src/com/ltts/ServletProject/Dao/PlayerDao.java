@@ -1,6 +1,7 @@
 package com.ltts.ServletProject.Dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -69,6 +70,26 @@ public class PlayerDao {
 		//return false;
 
 		
+	}
+	public boolean updatePlayer(int Player_id,String Player_Name,String Skill,String country,Date DOB,int Age , int Matches,int Runs,int Wickets,String Batting_Style,String Bowling_Style) throws Exception {
+		// TODO Auto-generated method stub
+		
+		Connection con=MyConnection.getConnection();
+		PreparedStatement ps=con.prepareStatement("UPDATE Player SET Player_Name = ?,Skill=?,country=?,DOB = ?,Age = ?,Matches = ?,Runs = ?,Wickets = ?,Batting_Style = ?,Bowling_Style where Playerid=?");
+		ps.setString(1,Player_Name);
+		ps.setString(2, Skill);
+		ps.setString(3,country);
+		ps.setDate(4, DOB);
+		ps.setInt(5, Age);
+		ps.setInt(6, Runs);
+		ps.setInt(7, Matches);
+		ps.setInt(8, Wickets);
+		ps.setString(9, Batting_Style);
+		ps.setString(10, Bowling_Style);
+		ps.setInt(11, Player_id);
+		
+	
+	return ps.execute();
 	}
 
 }
