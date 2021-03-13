@@ -3,14 +3,12 @@ package com.ltts.ServletProject.Dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.ltts.ServletProject.configure.MyConnection;
 import com.ltts.ServletProject.model.Auction;
-import com.ltts.ServletProject.model.Player;
 
 
 
@@ -60,6 +58,22 @@ public class AuctionDao {
 		//return false;
 
 		
+	}
+	public boolean updateAuction(int Auction_id,int Player_id,int Team_id,int Year,int Amount) throws Exception {
+		// TODO Auto-generated method stub
+		
+		Connection con=MyConnection.getConnection();
+		PreparedStatement ps=con.prepareStatement("UPDATE auction SET Player_id=?,Team_id=?,Year = ?,Amount=? where Auction_id=?");
+		
+		ps.setInt(1,Player_id);
+		ps.setInt(2,Team_id);
+		ps.setInt(3, Year);
+		ps.setInt(4, Amount);
+		ps.setInt(5,Auction_id);
+		
+		
+	
+	return ps.execute();
 	}
 
 }

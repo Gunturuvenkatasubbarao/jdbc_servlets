@@ -55,7 +55,8 @@ public class UpdatePlayerServlet extends HttpServlet {
 			int Wickets=Integer.parseInt(request.getParameter("Wickets"));
 			String Batting_Style=request.getParameter("Batting_Style");
 			String Bowling_Style=request.getParameter("Bowling_Style");
-			Date d=Date.valueOf("DOB");
+		
+			Date d=Date.valueOf(DOB);
 			Player p = new Player(Player_id,Player_Name,Skill,country,d,Age,Matches,Runs,Wickets,Batting_Style,Bowling_Style);
 			System.out.println("Inside Update Player Servlet: "+p);
 			PlayerDao pd=new PlayerDao();

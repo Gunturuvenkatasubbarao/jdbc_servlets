@@ -14,11 +14,11 @@ AuctionDao ad=new AuctionDao();
 Auction a1=ad.getAuctionById(id);
 %>
 <form action="./UpdateAuctionServlet" method="post">
-Auction Id: <%=a1.getAuction_id() %> <br><br>
+Auction Id: <input type=hidden value="<%=a1.getAuction_id() %>" name="Auction_id"><br><br>
 Player Id: <input type="number" value="<%=a1.getPlayer_id()%>" name="Player_id"><br><br>
 Team Id: <input type="number" value="<%=a1.getTeam_id()%>" name="Team_id"><br><br>
 Year: <input type="number" value="<%=a1.getYear()%>" name="Year"><br><br>
-Amount:<input type="number" value="<%=a1.getAmount() %>">
+Amount:<input type="number" value="<%=a1.getAmount() %>"name="Amount">
 <input type="submit" value="Update Auction">
 
 </form>

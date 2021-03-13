@@ -75,7 +75,7 @@ public class PlayerDao {
 		// TODO Auto-generated method stub
 		
 		Connection con=MyConnection.getConnection();
-		PreparedStatement ps=con.prepareStatement("UPDATE Player SET Player_Name = ?,Skill=?,country=?,DOB = ?,Age = ?,Matches = ?,Runs = ?,Wickets = ?,Batting_Style = ?,Bowling_Style where Playerid=?");
+		PreparedStatement ps=con.prepareStatement("UPDATE Player SET Player_Name = ?,Skill=?,country=?,DOB = ?,Age = ?,Matches = ?,Runs = ?,Wickets = ?,Batting_Style = ?,Bowling_Style where Player_id=?");
 		ps.setString(1,Player_Name);
 		ps.setString(2, Skill);
 		ps.setString(3,country);
